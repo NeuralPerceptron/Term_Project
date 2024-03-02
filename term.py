@@ -50,7 +50,6 @@ def show_search_menu():
     print('3. Back to main')
     print('*******************************************')
 
-# 2020113425 홍성민
 def show_office():
     f = open('output.txt', 'a')
     print('Ofc.\tBld.\t\tOfc.\t\tOfc.')
@@ -67,7 +66,6 @@ def show_office():
     f.close()
 
 
-# 2020113425 홍성민
 def office_manage():
     print('\n\tOffice Management')
     show_submenu()
@@ -150,7 +148,6 @@ def office_manage():
                 print('Check office code name correctly.')
             office_manage()
 
-        # Delete 2019113632 박정규(사무실 삭제시 영역,물품 연쇄 삭제 부분)
         elif n == '4':
             print('Deletable office code')
             for i in range(len(office)):
@@ -222,7 +219,6 @@ def office_manage():
             office_manage()
 
 
-# 2020113425 홍성민
 def show_area():
     if len(area) > 0:
         f = open('output.txt', 'a')
@@ -244,7 +240,6 @@ def show_area():
 
 
 
-# 2020113425 홍성민
 def area_manage():
     if len(office) == 0:
         print('\n!!! Enter office info first. please.\n')
@@ -336,7 +331,6 @@ def area_manage():
                     print('Enter area info first.')
                     area_manage()
 
-            # delete 2019113632 박정규(영역 삭제 시 물품 연쇄 삭제 부분)
             elif n == '4':
                 print('\nDelete Area Info')
                 show_area()
@@ -388,7 +382,6 @@ def area_manage():
                 area_manage()
 
 
-# 2019113632 박정규
 def check_code():
     isOfCode = False
     isArCode = False
@@ -431,7 +424,6 @@ def check_code():
     return off_num, ar_num, isOfCode, isArCode
 
 
-# 2019113632 박정규
 def show_product():
     product.sort()
     f = open('output.txt', 'a')
@@ -448,7 +440,6 @@ def show_product():
     f.close()
 
 
-# 2019113632 박정규
 def product_manage():
     if len(area) == 0:
         print('\n!!! No data. Input office & area data first. please.\n')
@@ -686,7 +677,6 @@ def product_manage():
                 product_manage()
 
 
-# 2019113632 박정규
 def show_p_code():
     print('\nSearchable product code.')
     for i in range(len(product)):
@@ -694,7 +684,6 @@ def show_p_code():
     print('\n')
 
 
-# 2019113632 박정규
 def show_all_prod():
     f = open('output.txt', 'a')
     f.write('\nSearch all product\n')
@@ -738,7 +727,6 @@ def find_prod(idx):
     f.close()
 
 
-# 2019113632 박정규
 def search_prod():
     show_search_menu()
     n = int(input('Enter the number of the menu > '))
@@ -767,7 +755,6 @@ def search_prod():
         search_prod()
 
 
-# 2019113632 박정규
 def save_file():
     with open('list.dat','wb') as f:
         pickle.dump(data, f)
